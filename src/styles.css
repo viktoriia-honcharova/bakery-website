@@ -37,9 +37,11 @@ body {
 
 ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.hidden {
+.visually-hidden {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -73,7 +75,6 @@ address {
 
 .link:hover {
   color: var(--color-brand-light);
-  font-weight: 600;
 }
 
 .section {
@@ -82,6 +83,27 @@ address {
 
 .section:first-child {
   padding-top: 0;
+}
+
+/* Header */
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-nav {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.header-menu {
+  display: flex;
+  gap: 64px;
+  flex-grow: 1;
+  justify-content: center;
 }
 
 /* Hero section */
@@ -102,13 +124,19 @@ address {
 }
 
 /* Addantages section */
+.advantages-section {
+  background-color: var(--color-brand-light);
+  padding: 16px 0;
+}
 
 .advantages-list {
-  background-color: var(--color-brand-light);
-  color: var(--color-primary-light);
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
 }
 
 .advantages-item {
+  color: var(--color-primary-light);
   font-size: 20px;
   font-weight: 300;
 }
@@ -124,6 +152,16 @@ address {
 }
 
 /* Traditions section */
+.traditions-container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.traditions-content {
+  max-width: 710px;
+}
+
 .traditions-section {
   padding-top: 96px;
 }
@@ -141,6 +179,10 @@ address {
   margin-bottom: 42px;
 }
 
+.traditions-text.limited {
+  max-width: 340px;
+}
+
 /* Chefs section */
 .chefs-title {
   margin-bottom: 80px;
@@ -153,6 +195,12 @@ address {
 }
 
 /* Formats section */
+.formats-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .formats-title {
   margin-bottom: 80px;
 }
@@ -165,6 +213,16 @@ address {
 .format-text {
   font-size: 14px;
   font-weight: 300;
+}
+
+.format-card {
+  border: 1px solid lightgray;
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.formats-item {
+  flex-basis: calc((100% - 40px) / 3);
 }
 
 /* Contacts section */
