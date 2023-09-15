@@ -7,7 +7,9 @@
   --color-secondary-dark: #a18268;
 }
 
-* {
+*,
+*::after,
+*::before {
   box-sizing: border-box;
 }
 
@@ -19,6 +21,10 @@ h5,
 h6,
 p {
   margin-top: 0;
+}
+
+a {
+  display: inline-block;
 }
 
 body {
@@ -195,12 +201,6 @@ address {
 }
 
 /* Chefs section */
-.chef-photo {
-  border-radius: 4px 4px 4px 200px;
-  box-shadow: -16px 16px 0 0 var(--color-primary-light),
-    -16px 16px 0 1px var(--color-secondary-dark);
-}
-
 .chefs-title {
   max-width: 550px;
   margin: 0 auto 80px;
@@ -221,11 +221,47 @@ address {
   font-weight: 600;
 }
 
+.chef-text p {
+  margin-bottom: 24px;
+}
+
+.chef-text p:last-child {
+  margin-bottom: 0;
+}
+
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+
+.chef-photo {
+  border-radius: 4px 4px 4px 200px;
+  box-shadow: -16px 16px 0 0 var(--color-primary-light),
+    -16px 16px 0 1px var(--color-secondary-dark);
+}
+
 /* Formats section */
+.formats-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
 .carousel-button {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -279,17 +315,55 @@ address {
 }
 
 /* Contacts section */
-.contacts-title {
-  margin-bottom: 16px;
-}
-
-/* Footer */
 .footer {
   background-image: url("../img/footer-background.jpg");
   background-color: var(--color-primary-dark);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 32px 0;
+}
+
+.contact-section {
+  padding-bottom: 96px;
+}
+
+.contact-container {
+  display: flex;
+  gap: 32px;
+}
+
+.contacts-title {
+  margin-bottom: 16px;
+}
+
+.contact-map {
+  flex-shrink: 0;
+  border: 0;
+  border-radius: 16px;
+}
+
+/* Footer */
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-nav,
+.footer-address {
+  flex-basis: 50%;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+
+.address-list,
+.address-info {
+  flex-grow: 1;
 }
 
 .address-link {
